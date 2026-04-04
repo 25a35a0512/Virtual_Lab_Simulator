@@ -12,7 +12,6 @@
 
   <div class="page-wrap">
 
-    <!-- ── HEADER ────────────────────────────────────────── -->
     <div class="dash-header">
       <div class="dash-welcome">
         <h1>Welcome back, <span id="welcome-name">—</span> 👋</h1>
@@ -21,7 +20,6 @@
       <button class="btn btn-danger btn-sm" onclick="logout()">Logout</button>
     </div>
 
-    <!-- ── STAT CARDS ─────────────────────────────────────── -->
     <div class="dash-stats">
       <div class="dash-stat card">
         <div class="ds-num">18</div>
@@ -41,10 +39,8 @@
       </div>
     </div>
 
-    <!-- ── MAIN GRID ──────────────────────────────────────── -->
     <div class="dash-grid">
 
-      <!-- Left: Experiments -->
       <div>
         <h2 class="section-title" style="font-size:1.1rem;margin-bottom:1rem">Available Experiments</h2>
         <div class="dash-exp-list">
@@ -161,7 +157,6 @@
         </div>
       </div>
 
-      <!-- Right: Profile -->
       <div>
         <h2 class="section-title" style="font-size:1.1rem;margin-bottom:1rem">Your Profile</h2>
         <div class="card">
@@ -194,7 +189,6 @@
           </div>
         </div>
 
-        <!-- Quick tips card -->
         <div class="card mt-2" style="background:#fffbeb;border-color:#fde68a">
           <h3 style="font-size:.95rem;font-weight:700;margin-bottom:.5rem">💡 Tips</h3>
           <ul style="font-size:.85rem;color:#78350f;padding-left:1.1rem;line-height:1.9">
@@ -205,8 +199,8 @@
         </div>
       </div>
 
-    </div><!-- /dash-grid -->
-  </div><!-- /page-wrap -->
+    </div>
+  </div>
 
   <footer class="site-footer">
     © VirtualLab. Built for students.
@@ -215,7 +209,6 @@
   <script src="../js/auth.js"></script>
   <script src="../js/main.js"></script>
   <script>
-    // Sync sessions label with completed count after main.js runs
     document.addEventListener('DOMContentLoaded', () => {
       const s = getSession();
       if (s) {
