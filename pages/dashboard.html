@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — VirtualLab</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar" id="main-nav"></nav>
+
+  <div class="page-wrap">
+
+    <!-- ── HEADER ────────────────────────────────────────── -->
+    <div class="dash-header">
+      <div class="dash-welcome">
+        <h1>Welcome back, <span id="welcome-name">—</span> 👋</h1>
+        <p>Here's an overview of your learning progress.</p>
+      </div>
+      <button class="btn btn-danger btn-sm" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- ── STAT CARDS ─────────────────────────────────────── -->
+    <div class="dash-stats">
+      <div class="dash-stat card">
+        <div class="ds-num">18</div>
+        <div class="ds-lbl">Experiments Available</div>
+      </div>
+      <div class="dash-stat card">
+        <div class="ds-num" id="dash-completed">0</div>
+        <div class="ds-lbl">Sessions Completed</div>
+      </div>
+      <div class="dash-stat card">
+        <div class="ds-num">3</div>
+        <div class="ds-lbl">Subjects Covered</div>
+      </div>
+      <div class="dash-stat card">
+        <div class="ds-num">∞</div>
+        <div class="ds-lbl">Times You Can Repeat</div>
+      </div>
+    </div>
+
+    <!-- ── MAIN GRID ──────────────────────────────────────── -->
+    <div class="dash-grid">
+
+      <!-- Left: Experiments -->
+      <div>
+        <h2 class="section-title" style="font-size:1.1rem;margin-bottom:1rem">Available Experiments</h2>
+        <div class="dash-exp-list">
+
+          <div class="dash-exp-item">
+            <div class="dei-info">
+              <h4>🧪 Acid-Base Reaction</h4>
+              <p>Mix HCl and NaOH, observe neutralisation</p>
+            </div>
+            <div class="flex gap-1 items-c">
+              <span class="badge badge-green">Chemistry</span>
+              <a href="experiments.html" class="btn btn-primary btn-sm">Start</a>
+            </div>
+          </div>
+
+          <div class="dash-exp-item">
+            <div class="dei-info">
+              <h4>🌈 pH Indicator</h4>
+              <p>Visualise colour changes across pH 0–14</p>
+            </div>
+            <div class="flex gap-1 items-c">
+              <span class="badge badge-green">Chemistry</span>
+              <a href="experiments.html" class="btn btn-primary btn-sm">Start</a>
+            </div>
+          </div>
+
+
+          <div class="dash-exp-item">
+            <div class="dei-info">
+              <h4>📊 Bubble Sort</h4>
+              <p>Visualize adjacent-swap sorting step by step</p>
+            </div>
+            <div class="flex gap-1 items-c">
+              <span class="badge badge-purple">CS</span>
+              <a href="experiments.html" class="btn btn-primary btn-sm">Start</a>
+            </div>
+          </div>
+
+          
+
+         
+
+          <div class="dash-exp-item">
+            <div class="dei-info">
+              <h4>🫧 Boyle's Law</h4>
+              <p>Compress gas and observe PV = constant</p>
+            </div>
+            <div class="flex gap-1 items-c">
+              <span class="badge badge-green">Chemistry</span>
+              <a href="experiments.html" class="btn btn-primary btn-sm">Start</a>
+            </div>
+          </div>
+
+          <div class="dash-exp-item">
+            <div class="dei-info">
+              <h4>🕰️ Simple Pendulum</h4>
+              <p>Swing a pendulum and measure period vs length</p>
+            </div>
+            <div class="flex gap-1 items-c">
+              <span class="badge badge-blue">Physics</span>
+              <a href="experiments.html" class="btn btn-primary btn-sm">Start</a>
+            </div>
+          </div>
+
+         
+
+          <div class="dash-exp-item">
+            <div class="dei-info">
+              <h4>🪝 Hooke's Law</h4>
+              <p>Stretch a spring and compute force and energy</p>
+            </div>
+            <div class="flex gap-1 items-c">
+              <span class="badge badge-blue">Physics</span>
+              <a href="experiments.html" class="btn btn-primary btn-sm">Start</a>
+            </div>
+          </div>
+
+          <div class="dash-exp-item">
+            <div class="dei-info">
+              <h4>🔢 Selection Sort</h4>
+              <p>Find the minimum each pass and place in order</p>
+            </div>
+            <div class="flex gap-1 items-c">
+              <span class="badge badge-purple">CS</span>
+              <a href="experiments.html" class="btn btn-primary btn-sm">Start</a>
+            </div>
+          </div>
+
+          
+
+          <div class="dash-exp-item">
+            <div class="dei-info">
+              <h4>📚 Stack (LIFO)</h4>
+              <p>Push and pop to see last-in-first-out in action</p>
+            </div>
+            <div class="flex gap-1 items-c">
+              <span class="badge badge-purple">CS</span>
+              <a href="experiments.html" class="btn btn-primary btn-sm">Start</a>
+            </div>
+          </div>
+
+
+          <div class="dash-exp-item">
+            <div class="dei-info">
+              <h4>🃏 Insertion Sort</h4>
+              <p>Pick each element and insert it in the right place</p>
+            </div>
+            <div class="flex gap-1 items-c">
+              <span class="badge badge-purple">CS</span>
+              <a href="experiments.html" class="btn btn-primary btn-sm">Start</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right: Profile -->
+      <div>
+        <h2 class="section-title" style="font-size:1.1rem;margin-bottom:1rem">Your Profile</h2>
+        <div class="card">
+          <div class="profile-card">
+            <div class="flex items-c gap-2">
+              <div class="avatar" id="dash-avatar">?</div>
+              <div class="profile-info">
+                <h3 id="dash-name">—</h3>
+                <p id="dash-email">—</p>
+              </div>
+            </div>
+            <hr class="divider" style="margin:.75rem 0">
+            <div class="profile-detail">
+              <div class="pd-row">
+                <span>Member since</span>
+                <span id="dash-joined">—</span>
+              </div>
+              <div class="pd-row">
+                <span>Sessions done</span>
+                <span id="dash-sessions">0</span>
+              </div>
+              <div class="pd-row">
+                <span>Plan</span>
+                <span><span class="badge badge-blue">Free</span></span>
+              </div>
+            </div>
+            <hr class="divider" style="margin:.75rem 0">
+            <a href="experiments.html" class="btn btn-primary btn-full">Go to Experiments →</a>
+            <button class="btn btn-ghost btn-full mt-1" onclick="logout()">Logout</button>
+          </div>
+        </div>
+
+        <!-- Quick tips card -->
+        <div class="card mt-2" style="background:#fffbeb;border-color:#fde68a">
+          <h3 style="font-size:.95rem;font-weight:700;margin-bottom:.5rem">💡 Tips</h3>
+          <ul style="font-size:.85rem;color:#78350f;padding-left:1.1rem;line-height:1.9">
+            <li>Each experiment tracks automatically.</li>
+            <li>Try adjusting all sliders to explore edge cases.</li>
+            <li>Read the description before each simulation.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /dash-grid -->
+  </div><!-- /page-wrap -->
+
+  <footer class="site-footer">
+    © VirtualLab. Built for students.
+  </footer>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Sync sessions label with completed count after main.js runs
+    document.addEventListener('DOMContentLoaded', () => {
+      const s = getSession();
+      if (s) {
+        const el = document.getElementById('dash-sessions');
+        if (el) el.textContent = s.completed || 0;
+      }
+    });
+  </script>
+</body>
+</html>
