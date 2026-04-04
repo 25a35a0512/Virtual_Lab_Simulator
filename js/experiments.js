@@ -1,8 +1,4 @@
-/* ── experiments.js ──────────────────────────────────────────
-   Modal system + all 6 interactive experiment simulations.
-──────────────────────────────────────────────────────────── */
 
-// ── Modal helpers ──────────────────────────────────────────
 let activeModal = null;
 let animFrames  = {};
 
@@ -62,12 +58,9 @@ function simHtml(root, html) {
 function getEl(id) { return document.getElementById(id); }
 function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
 
-// ══════════════════════════════════════════════════════════
-//  EXPERIMENT CATALOGUE
-// ══════════════════════════════════════════════════════════
+
 const EXPERIMENTS = {
 
-  // ── 1. Acid-Base Reaction ─────────────────────────────
   acidbase: {
     title: 'Acid-Base Reaction',
     icon: '🧪',
@@ -96,7 +89,6 @@ const EXPERIMENTS = {
     },
   },
 
-  // ── 2. pH Indicator ──────────────────────────────────
   phind: {
     title: 'pH Indicator',
     icon: '🌈',
@@ -119,7 +111,6 @@ const EXPERIMENTS = {
     },
   },
 
-  // ── 3. Projectile Motion ──────────────────────────────
   projectile: {
     title: 'Projectile Motion',
     icon: '🎯',
@@ -148,7 +139,6 @@ const EXPERIMENTS = {
     },
   },
 
-  // ── 4. Ohm's Law ──────────────────────────────────────
   ohms: {
     title: "Ohm's Law",
     icon: '⚡',
@@ -179,7 +169,6 @@ const EXPERIMENTS = {
     },
   },
 
-  // ── 5. Bubble Sort Visualizer ─────────────────────────
   bubblesort: {
     title: 'Bubble Sort Visualizer',
     icon: '📊',
@@ -210,7 +199,6 @@ const EXPERIMENTS = {
     },
   },
 
-  // ── 6. Binary Search ─────────────────────────────────
   bsearch: {
     title: 'Binary Search Visualizer',
     icon: '🔍',
@@ -232,7 +220,6 @@ const EXPERIMENTS = {
     },
   },
 
-  // ── 7. Titration Curve ────────────────────────────────
   titration: {
     title: 'Titration Curve',
     icon: '🧫',
@@ -260,7 +247,6 @@ const EXPERIMENTS = {
     },
   },
 
-  // ── 8. Gas Laws (Boyle's Law) ─────────────────────────
   gaslaws: {
     title: "Boyle's Law Simulator",
     icon: '🫧',
@@ -284,7 +270,6 @@ const EXPERIMENTS = {
     },
   },
 
-  // ── 9. Electrolysis ──────────────────────────────────
   electrolysis: {
     title: 'Electrolysis of Water',
     icon: '⚗️',
@@ -305,7 +290,6 @@ const EXPERIMENTS = {
     },
   },
 
-  // ── 10. Simple Pendulum ───────────────────────────────
   pendulum: {
     title: 'Simple Pendulum',
     icon: '🕰️',
@@ -330,7 +314,6 @@ const EXPERIMENTS = {
     },
   },
 
-  // ── 11. Wave Interference ─────────────────────────────
   waveinterference: {
     title: 'Wave Interference',
     icon: '〰️',
