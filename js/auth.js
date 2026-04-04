@@ -1,12 +1,8 @@
-/* ── auth.js ─────────────────────────────────────────────────
-   All authentication logic: signup, login, logout, session.
-   Uses localStorage as the data store.
-──────────────────────────────────────────────────────────── */
+
 
 const AUTH_KEY   = 'vlab_users';
 const SESSION_KEY = 'vlab_session';
 
-// ── Helpers ────────────────────────────────────────────────
 function getUsers() {
   return JSON.parse(localStorage.getItem(AUTH_KEY) || '[]');
 }
@@ -26,7 +22,6 @@ function isLoggedIn() {
   return getSession() !== null;
 }
 
-// ── Registration ───────────────────────────────────────────
 function signup(name, email, password) {
   name    = name.trim();
   email   = email.trim().toLowerCase();
@@ -52,7 +47,7 @@ function signup(name, email, password) {
     id:        Date.now().toString(),
     name,
     email,
-    password,           // plain-text (localStorage demo — no real backend)
+    password,           
     joinedAt:  new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' }),
     completed: 0,
   };
@@ -62,7 +57,6 @@ function signup(name, email, password) {
   return { ok: true, user };
 }
 
-// ── Login ──────────────────────────────────────────────────
 function login(email, password) {
   email    = email.trim().toLowerCase();
   password = password.trim();
@@ -84,13 +78,11 @@ function login(email, password) {
   return { ok: true, user };
 }
 
-// ── Logout ─────────────────────────────────────────────────
 function logout() {
   clearSession();
   window.location.href = getRoot() + 'pages/login.html';
 }
 
-// ── Increment experiment count ─────────────────────────────
 function markExperimentDone() {
   const session = getSession();
   if (!session) return;
@@ -103,7 +95,6 @@ function markExperimentDone() {
   saveSession(session);
 }
 
-// ── Route guards ──────────────────────────────────────────
 function requireAuth() {
   if (!isLoggedIn()) {
     window.location.href = getRoot() + 'pages/login.html?reason=auth';
@@ -119,12 +110,10 @@ function redirectIfLoggedIn(dest) {
   return false;
 }
 
-// ── Utility ───────────────────────────────────────────────
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 function getRoot() {
-  // Works whether opened from root or /pages/
   const path = window.location.pathname;
   return path.includes('/pages/') ? '../' : './';
 }
